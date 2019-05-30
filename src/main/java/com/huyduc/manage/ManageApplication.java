@@ -11,8 +11,10 @@ public class ManageApplication {
     }
 
 }
+
+
 @RestController
-public class HelloController {
+class HelloController {
 
     @RequestMapping("/")
     public String index() {
