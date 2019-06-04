@@ -45,6 +45,7 @@ com\huyduc\manage\web\rest\errors\CustomParameterizedException.class
 com\huyduc\manage\web\rest\errors\ExceptionTranslator.class
 com\huyduc\manage\web\rest\util\PaginationUtil.class
 com\huyduc\manage\service\mapper\ClassesMapperImpl.class
+com\huyduc\manage\web\rest\ClassesResource.class
 com\huyduc\manage\security\jwt\JWTFilter.class
 com\huyduc\manage\web\rest\errors\PasswordNotMatchException.class
 com\huyduc\manage\security\UserNotActivatedException.class
