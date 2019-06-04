@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.hanhtien</groupId>
     <artifactId>project</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>manage</name>
     <description>Demo project for Spring Boot</description>
@@ -130,15 +130,23 @@
 
     <build>
         <plugins>
-	<plugin>
-      <groupId>com.heroku.sdk</groupId>
-      <artifactId>heroku-maven-plugin</artifactId>
-      <configuration>
-        <processTypes>
-          <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
-        </processTypes>
-      </configuration>
-    </plugin>
+            <!-- Heroku Maven Plugin Configuration -->
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>2.0.3</version>
+                <configuration>
+                    <appName>callicoder-heroku-maven-demo</appName>
+                    <includeTarget>false</includeTarget>
+                    <includes>
+                        <include>${project.build.directory}/${project.build.finalName}.jar</include>
+                    </includes>
+                    <jdkVersion>${java.version}</jdkVersion>
+                    <processTypes>
+                        <web>java $JAVA_OPTS -jar ${project.build.directory}/${project.build.finalName}.jar</web>
+                    </processTypes>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -161,36 +169,7 @@
 
         </plugins>
     </build>
-	<profiles>
-  <profile>
-    <id>test</id>
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>com.heroku.sdk</groupId>
-          <artifactId>heroku-maven-plugin</artifactId>
-          <configuration>
-            <appName>myapp-test</appName>
-          </configuration>
-        </plugin>
-      </plugins>
-    </build>
-  </profile>
-  <profile>
-    <id>prod</id>
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>com.heroku.sdk</groupId>
-          <artifactId>heroku-maven-plugin</artifactId>
-          <configuration>
-            <appName>myapp-prod</appName>
-          </configuration>
-        </plugin>
-      </plugins>
-    </build>
-  </profile>
-</profiles>
+
     <repositories>
         <repository>
             <id>spring-snapshots</id>

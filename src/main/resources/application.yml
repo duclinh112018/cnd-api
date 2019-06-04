@@ -1,8 +1,8 @@
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://www.db4free.net:3306/manage?zeroDateTimeBehavior=convertToNull&autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: manage
+    url: jdbc:mysql://localhost:3306/manage?zeroDateTimeBehavior=convertToNull&autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
     password: huyducc4
     hikari:
       auto-commit: false
@@ -20,5 +20,5 @@ spring:
       enabled: true
       max-file-size: 200MB
       max-request-size: 215MB
-    file:
-      upload-dir: /Users/callicoder/upload
+   server: 
+      port=${PORT:8080}
