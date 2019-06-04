@@ -73,4 +73,5 @@ com\huyduc\manage\web\rest\errors\FileNotFoundException.class
 com\huyduc\manage\security\jwt\TokenProvider.class
 com\huyduc\manage\service\util\RandomUtil.class
 com\huyduc\manage\bean\Years.class
+com\huyduc\manage\web\rest\IndexController.class
 com\huyduc\manage\service\dto\ClassesDTO.class
